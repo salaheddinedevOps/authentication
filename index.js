@@ -10,7 +10,7 @@ app.use("/login", loginRouter);
 app.use("/database", function auth(req, res, next) {
     if(req.sessions.authorization){
         jwt.verify(
-            
+
         )
     }
 });

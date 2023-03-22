@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const subscriptionsRouter = require('./subscription.js');
 const users = require('./register').users;
 let accessToken = [];
 const isValid = (username, password) =>{
@@ -26,5 +27,6 @@ router.post('/', (req,res)=>{
         res.send("Enter your username and password");
     }
 })
+router.use("/subscriptions", subscriptionsRouter);
 module.exports = router;
 module.exports.accessToken = accessToken;
